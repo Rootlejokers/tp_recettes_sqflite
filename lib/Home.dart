@@ -49,9 +49,94 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Liste des recettes"),
+        title: Text("Liste des recettes",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25
+          ),
+        ),
         centerTitle: true,
+        backgroundColor: Colors.blue.shade500,
+        foregroundColor: Colors.white,
       ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(padding: EdgeInsets.all(20),
+
+            child: Column(
+              children: [
+                TextField(
+                  controller: _titleCtrl,
+                  decoration: InputDecoration(
+                      labelText: "titer"
+                  ),
+                ),
+                SizedBox(height: 10),
+                TextField(
+                  controller: _descCtrl,
+                  decoration: InputDecoration(
+                    labelText: 'Description',
+                  ),
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: _addRecipe,
+                  child: Text('Ajouter la recette'),
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(double.infinity, 50),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          SizedBox(height: 10),
+          RecipeCard(
+              recipe: Recipe(
+                  title: "Eru",
+                  description: "description"
+              ),
+              onDelete:() {
+              }
+          ),RecipeCard(
+              recipe: Recipe(
+                  title: "Eru",
+                  description: "description"
+              ),
+              onDelete:() {
+              }
+          ),RecipeCard(
+              recipe: Recipe(
+                  title: "Eru",
+                  description: "description"
+              ),
+              onDelete:() {
+              }
+          ),RecipeCard(
+              recipe: Recipe(
+                  title: "Eru",
+                  description: "description"
+              ),
+              onDelete:() {
+              }
+          ),RecipeCard(
+              recipe: Recipe(
+                  title: "Eru",
+                  description: "description"
+              ),
+              onDelete:() {
+              }
+          ),RecipeCard(
+              recipe: Recipe(
+                  title: "Eru",
+                  description: "description"
+              ),
+              onDelete:() {
+              }
+          ),
+        ],
+      )
     );
 
   }
